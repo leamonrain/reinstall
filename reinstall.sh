@@ -1565,7 +1565,7 @@ Continue with DD?
             fi
         done
 
-        iso=$(curl -L https://fnnas.com/ | grep -o 'https://[^"]*\.iso' | head -1)
+        iso=$(curl -L https://fnnas.com | grep -o 'https://[^"]*\.iso[^"]*' | head -1)
         test_url "$iso" iso
         eval "${step}_iso='$iso'"
     }
